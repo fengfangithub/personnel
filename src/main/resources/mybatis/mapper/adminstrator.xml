@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.fengfan.personnel.dao.AdministratorDao">
+	<select id="selectNoPassword" resultType="int" parameterType="administrator">
+		select count(*) from
+		tb_administrator where a_no = #{no} and a_password = #{password}
+	</select>
+	<select id="selectNo" resultType="int" parameterType="java.util.Map">
+		select count(*) from tb_administrator where a_no = #{no}
+	</select>
+</mapper>

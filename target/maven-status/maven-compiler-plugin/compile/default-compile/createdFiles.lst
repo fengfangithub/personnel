@@ -1,0 +1,5 @@
+cn\fengfan\personnel\pojo\Administrator.class
+cn\fengfan\personnel\controller\AdministratorController.class
+cn\fengfan\personnel\service\impl\AdministratorServiceImpl.class
+cn\fengfan\personnel\dao\AdministratorDao.class
+cn\fengfan\personnel\service\AdministratorService.class

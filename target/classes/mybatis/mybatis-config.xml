@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<!-- 设置 -->
+	<settings>
+		
+		<!-- 启用缓存 -->
+		<setting name="cacheEnabled" value="true"/>
+		
+		<!-- 延迟加载（懒加载） -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="aggressiveLazyLoading" value="false"/>
+		
+		<!-- 列名和属性名映射 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		
+		<!-- 配置主键策略 -->
+		<setting name="useGeneratedKeys" value="true"/>
+		
+		<!-- 配置使用日志 -->
+		<setting name="logImpl" value="SLF4J"/>
+	
+	</settings>
+	
+	
+	<!-- 别名 -->
+	
+	<typeAliases>
+		<package name="cn.fengfan.personnel.pojo"/>
+	</typeAliases>
+	
+	<!-- 环境 -->
+	
+	<!-- Mapper -->
+	
+</configuration>
