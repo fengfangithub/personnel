@@ -4,6 +4,7 @@ public class Administrator {
 	private int id;
 	private String no;
 	private String password;
+	private String name;
 
 	public int getId() {
 		return id;
@@ -29,8 +30,12 @@ public class Administrator {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "Administrator [id=" + id + ", no=" + no + ", password=" + password + "]";
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

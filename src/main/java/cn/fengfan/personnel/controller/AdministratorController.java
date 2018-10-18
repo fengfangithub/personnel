@@ -1,5 +1,8 @@
 package cn.fengfan.personnel.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +18,24 @@ public class AdministratorController {
 
 	@RequestMapping("/administrator/login")
 	@ResponseBody
-	public int login(String no,String password) {
-		System.out.println("ff");
-		return administratorService.login(no, password);
+	public Map<String,Integer> login(String no, String password) {
+		Map<String,Integer> code = new HashMap<String,Integer>();
+		code.put("state", administratorService.login(no, password));
+		return code;
+	}
+
+	@RequestMapping("/administrator/register")
+	@ResponseBody
+	public Map<String,Integer> register(Administrator administrator) {
+		Map<String,Integer> code = new HashMap<String,Integer>();
+		code.put("state", administratorService.register(administrator));
+		return code;
+	}
+	@RequestMapping("/administrator/password")
+	@ResponseBody
+	public Map<String,Integer> updatePassword(String oldPassword,String newPassword){
+		Map<String,Integer> code = new HashMap<String,Integer>();
+		code.put("state", administratorService.updatePassword(newPassword, oldPassword));
+		return code;
 	}
 }

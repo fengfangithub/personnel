@@ -1,4 +1,0 @@
-0:0:0:0:0:0:0:1 - - [15/Oct/2018:15:52:27 +0800] "GET /personnel/administrator/login?no=123 HTTP/1.1" 200 11 http-bio-8080-exec-1 1040
-0:0:0:0:0:0:0:1 - - [15/Oct/2018:15:52:43 +0800] "GET /personnel/administrator/login?no=123 HTTP/1.1" 200 11 http-bio-8080-exec-4 16
-0:0:0:0:0:0:0:1 - - [15/Oct/2018:15:52:46 +0800] "GET /personnel/administrator/login?no=123 HTTP/1.1" 200 11 http-bio-8080-exec-6 11
-0:0:0:0:0:0:0:1 - - [15/Oct/2018:15:52:58 +0800] "GET /personnel/administrator/login?no=123 HTTP/1.1" 200 11 http-bio-8080-exec-8 16
