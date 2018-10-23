@@ -1,10 +1,10 @@
 package cn.fengfan.personnel.pojo;
 
-public class Administrator {
+public class Position {
 	private int id;
 	private String no;
-	private String password;
 	private String name;
+	private int salary;
 
 	public int getId() {
 		return id;
@@ -22,14 +22,6 @@ public class Administrator {
 		this.no = no;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -37,4 +29,13 @@ public class Administrator {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
 }

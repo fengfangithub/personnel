@@ -1,8 +1,6 @@
 package cn.fengfan.personnel.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,24 +16,24 @@ public class EmployeeController {
 
 	@RequestMapping("/employee/login")
 	@ResponseBody
-	public Map<String, Integer> login(String no, String password) {
-		Map<String, Integer> code = new HashMap<String, Integer>();
+	public String login(String no, String password) {
+		JSONObject code = new JSONObject();
 		code.put("state", employeeService.login(no, password));
-		return code;
+		return code.toString();
 	}
 
 	@RequestMapping("/employee/password")
 	@ResponseBody
-	public Map<String, Integer> updatePassword(String oldPassword, String newPassword) {
-		Map<String, Integer> code = new HashMap<String, Integer>();
+	public String updatePassword(String oldPassword, String newPassword) {
+		JSONObject code = new JSONObject();
 		code.put("state", employeeService.updatePassword(oldPassword, newPassword));
-		return code;
+		return code.toString();
 	}
 
 	@RequestMapping("/employee/register")
 	@ResponseBody
-	public Map<String, Integer> register(Employee employee) {
-		Map<String, Integer> code = new HashMap<String, Integer>();
+	public String register(Employee employee) {
+		JSONObject code = new JSONObject();
 		/*
 		 * Employee e = new Employee(); e.setNo("123123"); e.setName("fff");
 		 * e.setPassword("111"); e.setBirth("2015-12-04"); e.setPhone("111555");
@@ -43,16 +41,31 @@ public class EmployeeController {
 		 * e.setImage("efef"); e.setHiredate("2000-01-1");
 		 */
 		code.put("state", employeeService.register(employee));
-		return code;
+		return code.toString();
 	}
 
 	@RequestMapping("/employee/updateInfo")
 	@ResponseBody
-	public Map<String, Integer> updateInfo(Employee employee) {
-		Map<String, Integer> code = new HashMap<String, Integer>();
+	public String updateInfo(Employee employee) {
+		JSONObject code = new JSONObject();
 		Employee e = new Employee();
 		e.setName("eee");
 		code.put("state", employeeService.updateInfo(e));
-		return code;
+		return code.toString();
+	}
+
+	@RequestMapping("/employee/queryPersonInfo")
+	@ResponseBody
+	public String queryPersonInfo() {
+		JSONObject code = new JSONObject();
+		if (employeeService.queryPersonInfo() != null) {
+			code.put("state", 1);
+			code.put("resutlt", new JSONObject(employeeService.queryPersonInfo()));
+		} else {
+			code.put("state", 0);
+			code.put("result", "");
+		}
+		System.out.println(code);
+		return code.toString();
 	}
 }

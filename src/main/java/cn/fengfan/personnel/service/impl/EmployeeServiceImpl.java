@@ -64,11 +64,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 			employee.setNo(session.getAttribute("no").toString());
 			if (employeeDao.update(employee) > 0) {
 				return 1;
-			}else {
+			} else {
 				return 0;
 			}
 		}
 		return 2;
 	}
 
+	@Override
+	public Employee queryPersonInfo() {
+		if(employeeDao.personInfo(session.getAttribute("no").toString()) != null) {
+			return employeeDao.personInfo(session.getAttribute("no").toString());
+		}
+		return null;
+	}
 }

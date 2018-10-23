@@ -54,4 +54,23 @@
 		</if>
 		where e_no = #{no}
 	</update>
+
+	<resultMap type="cn.fengfan.personnel.pojo.Employee" id="employee">
+		<id column="e_id" property="id" />
+		<result column="e_no" property="no" />
+		<result column="e_name" property="name" />
+		<result column="e_state" property="state" />
+		<result column="e_birth" property="birth" />
+		<result column="e_phone" property="phone" />
+		<result column="e_mobile" property="mobile" />
+		<result column="e_email" property="email" />
+		<result column="e_card" property="card" />
+		<result column="e_address" property="address" />
+		<result column="e_image" property="image" />
+		<result column="e_hiredate" property="hiredate" />
+	</resultMap>
+	<select id="personInfo" parameterType="java.util.Map" resultMap="employee">
+		select * from
+		tb_employee where e_no = #{no}
+	</select>
 </mapper>

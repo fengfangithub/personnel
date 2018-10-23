@@ -1,8 +1,6 @@
 package cn.fengfan.personnel.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,24 +16,25 @@ public class AdministratorController {
 
 	@RequestMapping("/administrator/login")
 	@ResponseBody
-	public Map<String,Integer> login(String no, String password) {
-		Map<String,Integer> code = new HashMap<String,Integer>();
+	public String login(String no, String password) {
+		JSONObject code = new JSONObject();
 		code.put("state", administratorService.login(no, password));
-		return code;
+		return code.toString();
 	}
 
 	@RequestMapping("/administrator/register")
 	@ResponseBody
-	public Map<String,Integer> register(Administrator administrator) {
-		Map<String,Integer> code = new HashMap<String,Integer>();
+	public String register(Administrator administrator) {
+		JSONObject code = new JSONObject();
 		code.put("state", administratorService.register(administrator));
-		return code;
+		return code.toString();
 	}
+
 	@RequestMapping("/administrator/password")
 	@ResponseBody
-	public Map<String,Integer> updatePassword(String oldPassword,String newPassword){
-		Map<String,Integer> code = new HashMap<String,Integer>();
+	public String updatePassword(String oldPassword, String newPassword) {
+		JSONObject code = new JSONObject();
 		code.put("state", administratorService.updatePassword(newPassword, oldPassword));
-		return code;
+		return code.toString();
 	}
 }

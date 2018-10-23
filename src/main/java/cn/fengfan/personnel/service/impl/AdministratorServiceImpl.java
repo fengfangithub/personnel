@@ -48,9 +48,9 @@ public class AdministratorServiceImpl implements AdministratorService {
 				return 1;
 			} else if (!session.getAttribute("password").equals(oldPassword)) {
 				return 2;
-			} else if(newPassword == oldPassword){
+			} else if (newPassword == oldPassword) {
 				return 3;
-			}else {
+			} else {
 				return 0;
 			}
 		}

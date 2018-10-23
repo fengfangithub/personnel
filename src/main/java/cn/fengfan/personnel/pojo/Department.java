@@ -1,9 +1,9 @@
 package cn.fengfan.personnel.pojo;
 
-public class Administrator {
+public class Department {
 	private int id;
 	private String no;
-	private String password;
+	private String established;
 	private String name;
 
 	public int getId() {
@@ -22,12 +22,12 @@ public class Administrator {
 		this.no = no;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getEstablished() {
+		return established;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEstablished(String established) {
+		this.established = established;
 	}
 
 	public String getName() {
@@ -37,4 +37,5 @@ public class Administrator {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 }
